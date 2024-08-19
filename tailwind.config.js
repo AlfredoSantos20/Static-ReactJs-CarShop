@@ -8,9 +8,11 @@ export default {
         primary: "#f42c37",
         secondary: "#f42c37",
         brandYellow: "#fdc62e",
+        brandGold:"#F6C324",
         brandGreen: "#2dcc6f",
         brandBlue: "#1376f4",
         brandWhite: "#eeeeee",
+        brandPurple: "#A020F0",
       },
       container:{
         center:true,

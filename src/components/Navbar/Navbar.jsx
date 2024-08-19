@@ -23,7 +23,7 @@ const MenuLinks = [
     {
         id:4,
         name:"Contact Us",
-        link:"/#blog",
+        link:"/#contact",
     },
 ];
 
@@ -52,8 +52,8 @@ const Navbar = () => {
         <div className='container flex justify-between items-center'>
             {/* Logo and Links Section */}
                 <div className='flex items-center gap-4'>
-                    <a href="#" title="Tazki's Shop" className="text-brandGreen font-semibold tracking-widest text-2xl
-                    capitalize sm:text-3xl">Tazki's Shop
+                    <a href="#" title="CarShop" className="text-emerald-500 cursor pointer hover:scale-105 font-bold tracking-widest text-2xl
+                    capitalize sm:text-3xl">CarShop
                     </a>
                     
                     {/* Menu Items */} 
@@ -62,7 +62,7 @@ const Navbar = () => {
                             { MenuLinks.map((data, index) => (
                                    <li key={index}>
                                     <a href={data.link} className='inline-block px-4 font-semibold text-gray-500
-                                    hover:text-black dark:hover:text-white duration-200'>
+                                    hover:text-black cursor pointer hover:scale-105 dark:hover:text-white duration-200'>
                                         {" "}
                                         {data.name}</a>
                                    </li> 
@@ -70,7 +70,7 @@ const Navbar = () => {
                              {/* Dropdown */}
                              <li className='relative cursor-pointer group'>
                                 <a href="#" className='flex items-center gap-[2px] font-semibold
-                                text-graty-500 dark:hover:text-white py-2'>
+                                text-graty-500 cursor pointer hover:scale-105 dark:hover:text-white py-2'>
                                     Quick Links
                                     <span>
                                     <FaCaretDown className='group-hover:rotate-180

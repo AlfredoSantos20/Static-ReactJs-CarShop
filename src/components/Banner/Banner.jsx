@@ -1,5 +1,38 @@
 import React from 'react'
 import Slider from "react-slick";
+import White from '../../assets/bannerImages/whte.png';
+import Yellow from '../../assets/bannerImages/yelow.png';
+import Black from '../../assets/bannerImages/blck.png';
+import Button from "../Shared/Button";
+
+
+const BannerSlider = [
+{
+  id:1,
+  img:White,
+  subtitle: "White Edition",
+  title: "Honda Civic Type R",
+  title2: "Honda",
+
+},
+{
+  id:2,
+  img:Black,
+  subtitle: "Black Edition",
+  title: "Honda Civic Type R",
+  title2: "Honda",
+
+},
+{
+  id:3,
+  img:Yellow,
+  subtitle: "Yellow Edition",
+  title: "Honda Civic Type R",
+  title2: "Honda",
+
+},
+];
+
 const Banner = () => {
     const settings = {
         dots: true,
@@ -7,36 +40,51 @@ const Banner = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        // autoplay:true,
+        autoplay:true,
         autoplaySpeed: 4000,
         cssEase: "ease-in-out",
         pauseOnHover: false,
         pauseOnFocus: true,
       };
   return (
-    <div>
-      <div>
+    <div className='containter'>
+      <div className='overflow-hidden rounded-3xl min-h-[550px]
+       sm-min-h-[650px] banner-bg-color flex justify-center items-center'> {/*This classname is for adding card background for banner*/}
+        <div className='container pb-8 sm:pb-0'> {/*This classname is for adding card background for banner*/}
         {/* Slider Banner */}
         <Slider {...settings}>
-        <div className='w-full'>
-            <h3>1</h3>
-        </div>
-        <div>
-            <h3>2</h3>
-        </div>
-        <div>
-            <h3>3</h3>
-        </div>
-        <div>
-            <h3>4</h3>
-        </div>
-        <div>
-            <h3>5</h3>
-        </div>
-        <div>
-            <h3>6</h3>
-        </div>
+        { BannerSlider.map((data) => (
+          <div key={data.id}>
+            <div className='grid grid-cols-1 sm:grid-cols-2'>
+              {/* text content section */}
+              <div className='flex flex-col justify-center gap-4 sm:pl-3 pt-12 sm:pt-0 text-center sm:text-center sm:text-left order-2 sm:order-1
+              relative z-10'>
+                <h1 className='text-2xl sm:text-6xl lg:text-2xl font-bold'>{data.subtitle}</h1>
+                <h1 className='text-3xl sm:text-6xl lg:text-6xl font-bold'>{data.title}</h1>
+                <h1 className='text-5xl uppercase text-white dark:text-white/5 sm:text-[80px] md:text-[100px]
+                xl:text-[150px] font-bold'>{data.title2}</h1>
+                <div>
+                <Button
+                text="Shop Now"
+                bgColor="bg-emerald-500"
+                textColor="text-white"
+                />
+                </div>
+              </div>
+              {/* Img  section */}
+            <div className='order-1 sm:order-2'>
+                <div>
+                  <img src={data.img} alt=""
+                  className='w-[300px] h-[300px] sm:h-[450px]
+                  sm:w-[450px] sm:scale-105 lg:scale-110 object-contain
+                  mx-auto drop-shadow-[-8px_4px_6px_rgba(0,0,0,.4)] relative z-40' />
+                </div>
+            </div>
+            </div>
+          </div>
+        ))}
         </Slider>
+        </div>
       </div>
     </div>
   )
