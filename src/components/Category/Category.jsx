@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from "../Shared/Button";
+import Heading from "../Shared/Heading";
 import Image1 from '../../assets/bannerImages/mags.png';
 import Image2 from '../../assets/bannerImages/exausts.png';
 import Image3 from '../../assets/bannerImages/spoiler.png';
@@ -7,9 +8,10 @@ import Image3 from '../../assets/bannerImages/spoiler.png';
 const Category = () => {
   return (
     <div className='py-8'>
-      <div className='flex justify-center items-center'>
-        <h1 className='text-4xl font-bold '>Car Part's</h1>
-      </div>
+      
+      <Heading title="Car Part's" subtitle={"Available parts"}/>
+     
+      
         <div className='container mt-6'>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
               {/* First col */}

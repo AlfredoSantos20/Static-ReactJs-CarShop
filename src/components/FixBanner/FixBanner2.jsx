@@ -55,13 +55,13 @@ const CountdownTimer = ({ targetDate }) => {
   );
 };
 
-const FixBanner = ({ data }) => {
+const FixBanner2 = ({ data }) => {
   return (
     <div className='min-h-[550px] flex justify-center items-center py-12'>
       <div className='container'>
         <div
           // style={{ backgroundColor: data.bgColor }}
-          className='grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-white rounded-3xl bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600'
+          className='grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-white rounded-3xl bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500'
         >
           {/* first col */}
           <div className='p-6 sm:p-8'>
@@ -104,4 +104,4 @@ const FixBanner = ({ data }) => {
   );
 };
 
-export default FixBanner;
+export default FixBanner2;

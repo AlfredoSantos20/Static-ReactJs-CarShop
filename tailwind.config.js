@@ -13,6 +13,7 @@ export default {
         brandBlue: "#1376f4",
         brandWhite: "#eeeeee",
         brandPurple: "#A020F0",
+        brandTeal: "#14b8a6",
       },
       container:{
         center:true,
