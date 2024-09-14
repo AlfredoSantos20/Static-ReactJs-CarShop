@@ -7,8 +7,12 @@ const ProductCard = ({ data }) => {
       md:grid-cols-4 gap-5 place-items-center'>
         {/* card section */}
         {data.map((data)=> (
-          <div className='group' key={data.id}>
-            <div className='relative '>
+          <div
+          data-aos="fade-up"
+          data-aos-delay={data.aosDelay}
+          className='group' key={data.id}>
+            <div 
+            className='relative '>
              <img src={data.img} 
              className='[h-180px] w-[260px] object-cover 
              rounded-md bg-gradient-to-br from-gray-500/90 to-gray-800/70'

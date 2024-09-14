@@ -8,6 +8,13 @@ import FixBanner from "./components/FixBanner/FixBanner";
 import FixBanner2 from "./components/FixBanner/FixBanner2";
 import Products from "./components/Products/Product";
 import Event from "./components/Event/Event";
+import Partner from "./components/Partners/Partner";
+import Footer from "./components/Footer/Footer";
+import Popup from "./components/Popup/Popup";
+
+//import transition
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import Images
 import Gold from "./assets/bannerImages/gold.png";
 import Chameleon from "./assets/bannerImages/chameleon.png";
@@ -39,12 +46,29 @@ const BannerData2 =
 };
 
 const App = () => {
+  const [orderPopup, setOrderPopup] = React.useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+  
+// For React Transitions
+  React.useEffect(()=> {
+    AOS.init({
+      duration:800,
+      easing: "ease-in-sine",
+      delay:100,
+      offset:100,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden">
     {/* NavBar Section */}
-     <Navbar />
+     <Navbar handleOrderPopup = {handleOrderPopup }/>
     {/* Banner Section */}
-     <Banner />
+     <Banner handleOrderPopup = {handleOrderPopup }/>
     {/* Category Section */}
      <Category />
     {/* Category2 Section */}
@@ -59,6 +83,12 @@ const App = () => {
     <FixBanner2 data={BannerData2}/>
 
     <Event />
+
+    <Partner />
+
+    <Footer />
+
+    <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup}/>
     </div>
   )
 }
